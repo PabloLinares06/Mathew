@@ -9,25 +9,17 @@ class Particle {
   width: number;
   height: number;
   baseHeight: number;
-  baseX: number;
-  baseY: number;
-  density: number;
   phase: number;
   oscillationSpeed: number;
-  canvas: HTMLCanvasElement;
   ctx: CanvasRenderingContext2D;
 
-  constructor(x: number, y: number, canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
+  constructor(x: number, y: number, ctx: CanvasRenderingContext2D) {
     this.x = x;
     this.y = y;
-    this.canvas = canvas;
     this.ctx = ctx;
     this.width = Math.random() * 2 + 2; // Fixed width bars like the logo
     this.baseHeight = Math.random() * 30 + 10; // Initial random height
     this.height = this.baseHeight;
-    this.baseX = this.x;
-    this.baseY = this.y;
-    this.density = Math.random() * 30 + 10;
     this.phase = Math.random() * Math.PI * 2; // Random starting point for oscillation
     this.oscillationSpeed = Math.random() * 0.05 + 0.02; // Speed of the "up and down"
   }
@@ -38,38 +30,10 @@ class Particle {
     this.ctx.fillRect(this.x, this.y - this.height / 2, this.width, this.height);
   }
 
-  update(mouse: { x: number | null; y: number | null; radius: number }) {
-    // 1. Autonomous Equalizer Movement
+  update() {
+    // Autonomous Equalizer Movement ONLY (No mouse interaction for a sober look)
     this.phase += this.oscillationSpeed;
     this.height = this.baseHeight + Math.sin(this.phase) * (this.baseHeight * 0.8);
-
-    // 2. Mouse Interaction
-    if (mouse.x !== null && mouse.y !== null) {
-      let dx = mouse.x - this.x;
-      let dy = mouse.y - this.y;
-      let distance = Math.sqrt(dx * dx + dy * dy);
-      
-      if (distance < mouse.radius) {
-        let forceDirectionX = dx / distance;
-        let forceDirectionY = dy / distance;
-        let force = (mouse.radius - distance) / mouse.radius;
-        let directionX = forceDirectionX * force * this.density;
-        let directionY = forceDirectionY * force * this.density;
-
-        this.x -= directionX;
-        this.y -= directionY;
-      } else {
-        // Return to base position
-        if (this.x !== this.baseX) {
-          let dx = this.x - this.baseX;
-          this.x -= dx / 15;
-        }
-        if (this.y !== this.baseY) {
-          let dy = this.y - this.baseY;
-          this.y -= dy / 15;
-        }
-      }
-    }
   }
 }
 
@@ -83,25 +47,6 @@ export default function Hero() {
     if (!ctx) return;
 
     let particlesArray: Particle[] = [];
-    const mouse = {
-      x: null as number | null,
-      y: null as number | null,
-      radius: 150,
-    };
-
-    const handleMouseMove = (event: MouseEvent) => {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = event.clientX - rect.left;
-      mouse.y = event.clientY - rect.top;
-    };
-
-    const handleMouseLeave = () => {
-      mouse.x = null;
-      mouse.y = null;
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseleave", handleMouseLeave);
 
     const init = () => {
       const dpr = window.devicePixelRatio || 1;
@@ -112,35 +57,22 @@ export default function Hero() {
       canvas.style.height = `${window.innerHeight}px`;
 
       particlesArray = [];
-      // Reduced number of particles for a "not too saturated" look
-      let numberOfParticles = (window.innerWidth * window.innerHeight) / 15000;
+      // Balanced number of particles for a sober look
+      let numberOfParticles = (window.innerWidth * window.innerHeight) / 18000;
       
       for (let i = 0; i < numberOfParticles; i++) {
         let x = Math.random() * window.innerWidth;
         let y = Math.random() * window.innerHeight;
-        particlesArray.push(new Particle(x, y, canvas, ctx));
+        particlesArray.push(new Particle(x, y, ctx));
       }
-    };
-
-    const connect = () => {
-      // We remove the connections to make it look exactly like isolated equalizer bars
     };
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      // Draw interaction ring (subtle)
-      if (mouse.x !== null && mouse.y !== null) {
-        ctx.strokeStyle = "rgba(226, 28, 34, 0.15)";
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.arc(mouse.x, mouse.y, mouse.radius, 0, Math.PI * 2);
-        ctx.stroke();
-      }
-
       for (let i = 0; i < particlesArray.length; i++) {
         particlesArray[i].draw();
-        particlesArray[i].update(mouse);
+        particlesArray[i].update();
       }
       requestAnimationFrame(animate);
     };
@@ -155,8 +87,6 @@ export default function Hero() {
     window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseleave", handleMouseLeave);
       window.removeEventListener("resize", handleResize);
     };
   }, []);
