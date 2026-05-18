@@ -32,17 +32,11 @@ export default function Navbar() {
     >
       <div className="max-w-[1800px] mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-3 items-center">
         
-        {/* Left: Logo & Brand */}
+        {/* Left: Logo Only */}
         <div className="flex justify-start z-10">
-          <Link href="/" className="flex items-center gap-4 group">
-            <div className="w-12 h-12 md:w-16 md:h-16 transition-transform duration-700 group-hover:rotate-[360deg]">
-              <img src="/logo.png" alt="Ritmo Audiovisual Logo" className="w-full h-full object-contain filter drop-shadow-[0_0_10px_rgba(226,28,34,0.4)]" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-oswald text-xl md:text-2xl uppercase tracking-tighter text-presencia leading-none">
-                RITMO <span className="text-detonante">AUDIOVISUAL</span>
-              </span>
-              <span className="font-lato text-[8px] uppercase tracking-[0.4em] text-silencio/50 mt-1">By Joseph Mathew Ramirez</span>
+          <Link href="/" className="group">
+            <div className="w-16 h-16 md:w-20 md:h-20 transition-transform duration-700 group-hover:rotate-[360deg]">
+              <img src="/logo-r.png" alt="Ritmo Audiovisual Logo" className="w-full h-full object-contain filter drop-shadow-[0_0_10px_rgba(226,28,34,0.4)]" />
             </div>
           </Link>
         </div>

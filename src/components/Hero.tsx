@@ -178,17 +178,18 @@ export default function Hero() {
           transition={{ duration: 1, ease: [0.33, 1, 0.68, 1] }}
           className="flex flex-col items-center"
         >
-          <span className="font-oswald text-detonante text-sm md:text-base uppercase tracking-[0.6em] mb-6">
-            Ritmo Audiovisual
-          </span>
+          <div className="w-32 h-32 md:w-48 md:h-48 mb-10 filter drop-shadow-[0_0_20px_rgba(226,28,34,0.3)]">
+            <img src="/logo-r.png" alt="R Logo" className="w-full h-full object-contain" />
+          </div>
+          
           <h1 className="font-oswald text-6xl md:text-8xl lg:text-9xl uppercase tracking-tighter text-presencia leading-[0.8] mb-8">
             JOSEPH <br /> 
             <span className="text-flujo italic font-blackrush normal-case drop-shadow-[0_0_15px_rgba(242,140,38,0.3)]">
               Mathew Ramirez
             </span>
           </h1>
-          <p className="font-lato text-silencio text-xs md:text-sm uppercase tracking-[0.4em] max-w-md">
-            Diseño Crossmedia & Estrategia Digital
+          <p className="font-lato text-silencio text-xs md:text-sm uppercase tracking-[0.6em]">
+            Diseño Crossmedia
           </p>
         </motion.div>
       </div>
