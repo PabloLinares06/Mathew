@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+
 class Particle {
   x: number;
   y: number;
@@ -31,8 +32,6 @@ class Particle {
   }
 
   update(mouse: { x: number | null; y: number | null; radius: number }) {
-...
-
     if (mouse.x !== null && mouse.y !== null) {
       let dx = mouse.x - this.x;
       let dy = mouse.y - this.y;

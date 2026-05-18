@@ -12,17 +12,17 @@ export default function Home() {
       <Experience />
       
       {/* Projects Section */}
-      <section id="projects" className="py-32 px-6 md:px-12 lg:px-24 bg-origen border-t border-silencio/10">
-        <div className="flex flex-col items-center text-center mb-32 gap-4 relative">
-          <div className="relative">
-            <h2 className="font-oswald text-detonante text-sm md:text-base uppercase tracking-[0.5em] mb-4 opacity-50 relative z-0">
+      <section id="projects" className="py-32 px-6 md:px-12 lg:px-24 bg-origen border-t border-silencio/10 overflow-hidden">
+        <div className="flex flex-col items-center text-center mb-32 relative">
+          <div className="relative inline-block px-4">
+            <h2 className="font-oswald text-detonante text-sm md:text-base lg:text-lg uppercase tracking-[0.6em] mb-0 opacity-40 relative z-0">
               Proyectos
             </h2>
-            <h3 className="font-oswald text-7xl md:text-9xl lg:text-[10rem] uppercase tracking-tighter text-presencia leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none w-full">
-              <span className="italic font-blackrush normal-case text-flujo drop-shadow-[0_0_20px_rgba(233,80,33,0.3)]">Destacados</span>
+            <h3 className="font-oswald text-6xl md:text-8xl lg:text-9xl uppercase tracking-tighter text-presencia leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none w-full">
+              <span className="italic font-blackrush normal-case text-flujo drop-shadow-[0_0_25px_rgba(233,80,33,0.4)]">Destacados</span>
             </h3>
           </div>
-          <p className="font-lato text-silencio max-w-xl text-sm md:text-lg lg:text-xl uppercase tracking-[0.3em] mt-12 md:mt-16 z-20">
+          <p className="font-lato text-silencio max-w-2xl text-sm md:text-lg uppercase tracking-[0.3em] mt-24 md:mt-32 z-20 relative px-4">
             Explorando el diseño desde una perspectiva <br className="hidden md:block" /> lógica y disruptiva.
           </p>
         </div>
