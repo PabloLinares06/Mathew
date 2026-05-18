@@ -2,11 +2,11 @@
 
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-
 class Particle {
   x: number;
   y: number;
-  size: number;
+  width: number;
+  height: number;
   baseX: number;
   baseY: number;
   density: number;
@@ -18,7 +18,8 @@ class Particle {
     this.y = y;
     this.canvas = canvas;
     this.ctx = ctx;
-    this.size = Math.random() * 2 + 1;
+    this.width = Math.random() * 3 + 1;
+    this.height = Math.random() * 15 + 5;
     this.baseX = this.x;
     this.baseY = this.y;
     this.density = Math.random() * 40 + 5;
@@ -26,13 +27,12 @@ class Particle {
 
   draw() {
     this.ctx.fillStyle = "#e21c22"; // Detonante
-    this.ctx.beginPath();
-    this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    this.ctx.closePath();
-    this.ctx.fill();
+    this.ctx.fillRect(this.x, this.y, this.width, this.height);
   }
 
   update(mouse: { x: number | null; y: number | null; radius: number }) {
+...
+
     if (mouse.x !== null && mouse.y !== null) {
       let dx = mouse.x - this.x;
       let dy = mouse.y - this.y;
