@@ -8,9 +8,12 @@ class Particle {
   y: number;
   width: number;
   height: number;
+  baseHeight: number;
   baseX: number;
   baseY: number;
   density: number;
+  phase: number;
+  oscillationSpeed: number;
   canvas: HTMLCanvasElement;
   ctx: CanvasRenderingContext2D;
 
@@ -19,41 +22,51 @@ class Particle {
     this.y = y;
     this.canvas = canvas;
     this.ctx = ctx;
-    this.width = Math.random() * 2 + 2; // Closer to logo bar width
-    this.height = Math.random() * 25 + 10; // Varied heights like the logo equalizer
+    this.width = Math.random() * 2 + 2; // Fixed width bars like the logo
+    this.baseHeight = Math.random() * 30 + 10; // Initial random height
+    this.height = this.baseHeight;
     this.baseX = this.x;
     this.baseY = this.y;
     this.density = Math.random() * 30 + 10;
+    this.phase = Math.random() * Math.PI * 2; // Random starting point for oscillation
+    this.oscillationSpeed = Math.random() * 0.05 + 0.02; // Speed of the "up and down"
   }
 
   draw() {
-    this.ctx.fillStyle = "#e21c22"; // Detonante
-    this.ctx.fillRect(this.x, this.y, this.width, this.height);
+    this.ctx.fillStyle = "#e21c22"; // Detonante (Logo Red)
+    // Vertical centering of the bar relative to its Y position
+    this.ctx.fillRect(this.x, this.y - this.height / 2, this.width, this.height);
   }
 
   update(mouse: { x: number | null; y: number | null; radius: number }) {
+    // 1. Autonomous Equalizer Movement
+    this.phase += this.oscillationSpeed;
+    this.height = this.baseHeight + Math.sin(this.phase) * (this.baseHeight * 0.8);
+
+    // 2. Mouse Interaction
     if (mouse.x !== null && mouse.y !== null) {
       let dx = mouse.x - this.x;
       let dy = mouse.y - this.y;
       let distance = Math.sqrt(dx * dx + dy * dy);
-      let forceDirectionX = dx / distance;
-      let forceDirectionY = dy / distance;
-      let maxDistance = mouse.radius;
-      let force = (maxDistance - distance) / maxDistance;
-      let directionX = forceDirectionX * force * this.density;
-      let directionY = forceDirectionY * force * this.density;
-
+      
       if (distance < mouse.radius) {
+        let forceDirectionX = dx / distance;
+        let forceDirectionY = dy / distance;
+        let force = (mouse.radius - distance) / mouse.radius;
+        let directionX = forceDirectionX * force * this.density;
+        let directionY = forceDirectionY * force * this.density;
+
         this.x -= directionX;
         this.y -= directionY;
       } else {
+        // Return to base position
         if (this.x !== this.baseX) {
           let dx = this.x - this.baseX;
-          this.x -= dx / 10;
+          this.x -= dx / 15;
         }
         if (this.y !== this.baseY) {
           let dy = this.y - this.baseY;
-          this.y -= dy / 10;
+          this.y -= dy / 15;
         }
       }
     }
@@ -99,7 +112,9 @@ export default function Hero() {
       canvas.style.height = `${window.innerHeight}px`;
 
       particlesArray = [];
-      let numberOfParticles = (canvas.width * canvas.height) / 9000;
+      // Reduced number of particles for a "not too saturated" look
+      let numberOfParticles = (window.innerWidth * window.innerHeight) / 15000;
+      
       for (let i = 0; i < numberOfParticles; i++) {
         let x = Math.random() * window.innerWidth;
         let y = Math.random() * window.innerHeight;
@@ -108,32 +123,15 @@ export default function Hero() {
     };
 
     const connect = () => {
-      let opacityValue = 1;
-      for (let a = 0; a < particlesArray.length; a++) {
-        for (let b = a; b < particlesArray.length; b++) {
-          let dx = particlesArray[a].x - particlesArray[b].x;
-          let dy = particlesArray[a].y - particlesArray[b].y;
-          let distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 100) {
-            opacityValue = 1 - distance / 100;
-            ctx.strokeStyle = `rgba(233, 80, 33, ${opacityValue})`; // Flujo
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-            ctx.stroke();
-          }
-        }
-      }
+      // We remove the connections to make it look exactly like isolated equalizer bars
     };
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      // Draw interaction ring
+      // Draw interaction ring (subtle)
       if (mouse.x !== null && mouse.y !== null) {
-        ctx.strokeStyle = "rgba(226, 28, 34, 0.2)"; // Detonante with low opacity
+        ctx.strokeStyle = "rgba(226, 28, 34, 0.15)";
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.arc(mouse.x, mouse.y, mouse.radius, 0, Math.PI * 2);
@@ -144,7 +142,6 @@ export default function Hero() {
         particlesArray[i].draw();
         particlesArray[i].update(mouse);
       }
-      connect();
       requestAnimationFrame(animate);
     };
 
@@ -168,7 +165,7 @@ export default function Hero() {
     <section id="home" className="relative w-full h-screen overflow-hidden bg-origen flex items-center justify-center">
       <canvas
         ref={canvasRef}
-        className="absolute top-0 left-0 w-full h-full pointer-events-none"
+        className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40"
       />
       <div className="relative z-10 text-center px-4">
         <motion.div
