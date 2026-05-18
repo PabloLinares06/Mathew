@@ -19,11 +19,11 @@ class Particle {
     this.y = y;
     this.canvas = canvas;
     this.ctx = ctx;
-    this.width = Math.random() * 3 + 1;
-    this.height = Math.random() * 15 + 5;
+    this.width = Math.random() * 2 + 2; // Closer to logo bar width
+    this.height = Math.random() * 25 + 10; // Varied heights like the logo equalizer
     this.baseX = this.x;
     this.baseY = this.y;
-    this.density = Math.random() * 40 + 5;
+    this.density = Math.random() * 30 + 10;
   }
 
   draw() {
