@@ -15,10 +15,10 @@ export default function Home() {
       <section id="projects" className="py-32 px-6 md:px-12 lg:px-24 bg-origen border-t border-silencio/10 overflow-hidden">
         <div className="flex flex-col items-center text-center mb-48 relative">
           <div className="relative flex flex-col items-center">
-            <h2 className="font-oswald text-detonante text-sm md:text-base lg:text-lg uppercase tracking-[0.8em] mb-4 opacity-40 relative z-0">
+            <h2 className="font-oswald text-7xl md:text-9xl lg:text-[11rem] uppercase tracking-tighter text-detonante leading-none opacity-20 relative z-0">
               Proyectos
             </h2>
-            <h3 className="font-oswald text-7xl md:text-9xl lg:text-[11rem] uppercase tracking-tighter text-presencia leading-[0.7] relative z-10 pointer-events-none mt-[-2rem] md:mt-[-4rem]">
+            <h3 className="font-oswald text-7xl md:text-9xl lg:text-[11rem] uppercase tracking-tighter text-presencia leading-[0.7] relative z-10 pointer-events-none mt-[-4rem] md:mt-[-6rem] lg:mt-[-8rem]">
               <span className="italic font-blackrush normal-case text-flujo drop-shadow-[0_0_30px_rgba(233,80,33,0.5)]">Destacados</span>
             </h3>
           </div>
@@ -42,12 +42,8 @@ export default function Home() {
         </div>
         
         <div className="w-full max-w-[1600px] grid grid-cols-1 md:grid-cols-3 items-center gap-12 md:gap-8 border-t border-silencio/5 pt-16">
-          {/* Left: Brand */}
-          <div className="flex justify-center md:justify-start order-2 md:order-1">
-            <div className="font-oswald text-2xl uppercase tracking-tighter text-presencia">
-              Ritmo <span className="text-detonante text-base">Audiovisual</span>
-            </div>
-          </div>
+          {/* Left: Empty for balance */}
+          <div className="hidden md:block order-2 md:order-1" />
           
           {/* Center: Social Links - MATHEMATICALLY CENTERED */}
           <div className="flex justify-center gap-12 order-1 md:order-2">

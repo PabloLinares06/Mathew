@@ -17,14 +17,6 @@ export default function About() {
   return (
     <section id="about" ref={containerRef} className="py-32 px-6 md:px-24 bg-origen relative flex flex-col items-center justify-center min-h-[70vh]">
       <div className="max-w-5xl mx-auto text-center">
-        <motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="font-oswald text-detonante text-xs md:text-sm uppercase tracking-[0.4em] mb-16"
-        >
-          // Joseph Mathew Ramirez
-        </motion.h2>
         <div className="flex flex-wrap gap-x-3 gap-y-3 justify-center text-center">
           {words.map((word, i) => {
             const start = i / words.length;

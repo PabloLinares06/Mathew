@@ -105,7 +105,7 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
 
       {/* Footer Navigation */}
       <section className="py-24 border-t border-silencio/10 text-center">
-        <Link href="/" className="font-oswald text-4xl md:text-6xl uppercase text-presencia hover:text-detonante transition-colors">
+        <Link href="/#projects" className="font-oswald text-4xl md:text-6xl uppercase text-presencia hover:text-detonante transition-colors">
           Explorar Más Proyectos
         </Link>
       </section>
