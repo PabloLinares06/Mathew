@@ -69,7 +69,7 @@ export default function Experience() {
                   0{index + 1}
                 </span>
                 <h3
-                  className="font-oswald text-6xl md:text-9xl uppercase tracking-tighter mb-16 md:mb-20 leading-none"
+                  className="font-oswald text-6xl md:text-9xl uppercase tracking-tighter mb-20 md:mb-32 leading-none"
                   style={{ color: skill.color }}
                 >
                   {skill.title}
