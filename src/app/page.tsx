@@ -15,10 +15,10 @@ export default function Home() {
       <section id="projects" className="py-32 px-6 md:px-12 lg:px-24 bg-origen border-t border-silencio/10 overflow-hidden">
         <div className="flex flex-col items-center text-center mb-24 relative">
           <div className="relative flex flex-col items-center">
-            <h2 className="font-oswald text-7xl md:text-9xl lg:text-[11rem] uppercase tracking-tighter text-presencia leading-none opacity-20 relative z-0">
+            <h2 className="font-oswald text-7xl md:text-9xl lg:text-[11rem] uppercase tracking-tighter text-presencia leading-none relative z-0">
               Proyectos
             </h2>
-            <h3 className="font-oswald text-7xl md:text-9xl lg:text-[11rem] uppercase tracking-tighter text-presencia leading-[0.7] relative z-10 pointer-events-none mt-[-5rem] md:mt-[-8rem] lg:mt-[-10rem]">
+            <h3 className="font-oswald text-7xl md:text-9xl lg:text-[11rem] uppercase tracking-tighter text-presencia leading-[0.7] relative z-10 pointer-events-none mt-[-6rem] md:mt-[-10rem] lg:mt-[-12rem]">
               <span className="italic font-blackrush normal-case text-flujo drop-shadow-[0_0_30px_rgba(233,80,33,0.5)]">Destacados</span>
             </h3>
           </div>
