@@ -104,7 +104,7 @@ export default function Hero() {
           transition={{ duration: 1, ease: [0.33, 1, 0.68, 1] }}
           className="flex flex-col items-center gap-0"
         >
-          <div className="w-full max-w-[280px] md:max-w-[500px] lg:max-w-[680px] filter drop-shadow-[0_0_50px_rgba(226,28,34,0.4)]">
+          <div className="w-full max-w-[280px] md:max-w-[500px] lg:max-w-[680px] overflow-hidden max-h-[210px] md:max-h-[375px] lg:max-h-[510px] filter drop-shadow-[0_0_50px_rgba(226,28,34,0.4)]">
             <img 
               src="/logo-final.png" 
               alt="Ritmo Audiovisual" 
@@ -112,7 +112,7 @@ export default function Hero() {
             />
           </div>
           
-          <div className="space-y-3 -mt-16 md:-mt-24 lg:-mt-32">
+          <div className="space-y-3">
             <h1 className="font-oswald text-5xl md:text-8xl lg:text-[10rem] uppercase tracking-tighter text-presencia leading-none">
               <span className="text-flujo italic font-blackrush normal-case drop-shadow-[0_0_20px_rgba(242,140,38,0.4)] block">
                 Mathew Ramirez
