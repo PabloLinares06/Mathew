@@ -46,13 +46,13 @@ export default function Home() {
           {/* Center: Social Links - MATHEMATICALLY CENTERED */}
           <div className="flex justify-center gap-12 order-1 md:order-2">
             {[
-              { label: "Instagram", url: "#" },
-              { label: "LinkedIn", url: "#" },
-              { label: "Behance", url: "#" }
+              { label: "Instagram", url: "https://www.instagram.com/ritmo.audiovisual?igsh=MXY4MDh3djhkd2dtNQ%3D%3D&utm_source=qr" },
+              { label: "Behance", url: "https://www.behance.net/josephramirez37" }
             ].map((social) => (
               <a 
                 key={social.label}
                 href={social.url} 
+                target="_blank"
                 className="font-lato text-xs uppercase tracking-[0.4em] text-silencio hover:text-detonante transition-all duration-300 relative group"
               >
                 {social.label}
