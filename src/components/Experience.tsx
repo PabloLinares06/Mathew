@@ -74,10 +74,10 @@ export default function Experience() {
               key={index}
               className="h-screen w-screen flex-shrink-0 flex items-center justify-center border-l border-silencio/10 p-6 md:p-24 text-center"
             >
-              <div className="max-w-4xl flex flex-col items-center">
-                <span className="font-oswald text-detonante text-xl mb-4 block">
-                  0{index + 1}
-                </span>
+              <div className="max-w-4xl flex flex-col items-center text-center">
+                <div className="w-20 h-20 md:w-28 md:h-28 mb-12 filter drop-shadow-[0_0_15px_rgba(226,28,34,0.2)]">
+                  <img src="/projects/marca-personal.png" alt="Ritmo Audiovisual" className="w-full h-full object-contain" />
+                </div>
                 <h3
                   className="font-oswald text-6xl md:text-9xl uppercase tracking-tighter mb-20 md:mb-32 leading-none"
                   style={{ color: skill.color }}
