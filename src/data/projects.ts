@@ -24,8 +24,8 @@ export const projects: Project[] = [
   },
   {
     slug: "documental-cinematografico",
-    title: "Documental Cinematográfico",
-    description: "Una pieza audiovisual que explora narrativas profundas y estéticas cinematográficas para conectar con la audiencia a un nivel emocional.",
+    title: "Documental “Foráneos”",
+    description: "Proyecto documental centrado en las historias de estudiantes que deben dejar sus pueblos para buscar nuevas oportunidades educativas. A través de una narrativa visual cercana y humana, el documental explora temas como la identidad, el desarraigo y la adaptación, mostrando cómo el cambio transforma la vida y la manera de ver el mundo.",
     category: "Producción Audiovisual",
     year: "2025",
     image: "/projects/documental.png",
