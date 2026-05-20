@@ -108,7 +108,7 @@ export default function Hero() {
             <img src="/logo-r.png" alt="Ritmo Audiovisual" className="w-[130%] h-auto object-contain" />
           </div>
           
-          <div className="mt-[-2rem] md:mt-[-8rem] lg:mt-[-12rem] space-y-6 relative z-10">
+          <div className="mt-[-4rem] md:mt-[-12rem] lg:mt-[-18rem] space-y-6 relative z-10">
             <h1 className="font-oswald text-5xl md:text-8xl lg:text-[11rem] uppercase tracking-tighter text-presencia leading-none">
               <span className="text-flujo italic font-blackrush normal-case drop-shadow-[0_0_20px_rgba(242,140,38,0.4)] block">
                 Mathew Ramirez
