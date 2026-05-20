@@ -6,34 +6,36 @@ export interface Project {
   year: string;
   image: string;
   tags: string[];
+  videoUrl?: string;
 }
 
 export const projects: Project[] = [
   {
-    slug: "nexus-branding",
-    title: "Nexus Branding",
-    description: "Una identidad visual disruptiva para una startup de inteligencia artificial, enfocada en la fluidez de datos y la conexión humana.",
-    category: "Branding Inmersivo",
-    year: "2024",
-    image: "https://images.unsplash.com/photo-1635339001026-6114ad11a1ed?auto=format&fit=crop&q=80&w=1600",
-    tags: ["Logo", "Motion", "UI Kit"],
+    slug: "marca-personal",
+    title: "Marca Personal",
+    description: "Desarrollo de la identidad visual 'Ritmo Audiovisual'. Un proceso creativo que integra la lógica del diseño con la fluidez del movimiento audiovisual.",
+    category: "Branding & Identidad",
+    year: "2026",
+    image: "/projects/marca-personal.png", // User to provide this later
+    tags: ["Logo", "Branding", "Estrategia"],
   },
   {
-    slug: "motion-abstract",
-    title: "Motion Abstract",
-    description: "Serie de experimentos visuales explorando la física de partículas y la resonancia acústica aplicada al diseño crossmedia.",
-    category: "Motion Graphics",
-    year: "2023",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1600",
-    tags: ["GSAP", "After Effects", "Particles"],
-  },
-  {
-    slug: "core-interface",
-    title: "Core Interface",
-    description: "Rediseño completo de un sistema de control lógico para infraestructuras industriales, priorizando la ergonomía cognitiva.",
-    category: "UX / UI Design",
+    slug: "documental-cinematografico",
+    title: "Documental Cinematográfico",
+    description: "Una pieza audiovisual que explora narrativas profundas y estéticas cinematográficas para conectar con la audiencia a un nivel emocional.",
+    category: "Producción Audiovisual",
     year: "2025",
-    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1600",
-    tags: ["App", "Figma", "Research"],
+    image: "/projects/documental.png",
+    videoUrl: "https://www.youtube.com/embed/-5R4mixYBn4",
+    tags: ["Audiovisual", "Dirección", "Montaje"],
+  },
+  {
+    slug: "modelado-3d",
+    title: "Modelado 3D",
+    description: "Exploración de formas y estructuras mediante el modelado tridimensional, enfocado en el detalle y la precisión técnica.",
+    category: "Diseño 3D",
+    year: "2025",
+    image: "/projects/modelado.png",
+    tags: ["3D", "Modelado", "Render"],
   },
 ];

@@ -83,10 +83,21 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
             </div>
           </div>
 
-          <div className="md:col-span-2">
             <p className="font-lato text-2xl md:text-3xl text-presencia leading-relaxed mb-12">
               {project.description}
             </p>
+
+            {project.videoUrl && (
+              <div className="mb-24 aspect-video w-full bg-black/20 rounded-lg overflow-hidden border border-silencio/10">
+                <iframe
+                  src={project.videoUrl}
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            )}
+            
             <p className="font-lato text-lg text-silencio leading-relaxed">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
             </p>
