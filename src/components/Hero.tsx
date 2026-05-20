@@ -102,7 +102,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.33, 1, 0.68, 1] }}
-          className="flex flex-col items-center gap-2"
+          className="flex flex-col items-center gap-0"
         >
           <div className="w-full max-w-[280px] md:max-w-[500px] lg:max-w-[680px] filter drop-shadow-[0_0_50px_rgba(226,28,34,0.4)]">
             <img 
@@ -112,7 +112,7 @@ export default function Hero() {
             />
           </div>
           
-          <div className="space-y-3">
+          <div className="space-y-3 -mt-6 md:-mt-10">
             <h1 className="font-oswald text-5xl md:text-8xl lg:text-[10rem] uppercase tracking-tighter text-presencia leading-none">
               <span className="text-flujo italic font-blackrush normal-case drop-shadow-[0_0_20px_rgba(242,140,38,0.4)] block">
                 Mathew Ramirez
