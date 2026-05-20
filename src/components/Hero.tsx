@@ -112,7 +112,7 @@ export default function Hero() {
             />
           </div>
           
-          <div className="space-y-3 -mt-6 md:-mt-10">
+          <div className="space-y-3 -mt-16 md:-mt-24 lg:-mt-32">
             <h1 className="font-oswald text-5xl md:text-8xl lg:text-[10rem] uppercase tracking-tighter text-presencia leading-none">
               <span className="text-flujo italic font-blackrush normal-case drop-shadow-[0_0_20px_rgba(242,140,38,0.4)] block">
                 Mathew Ramirez
