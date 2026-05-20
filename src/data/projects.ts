@@ -35,7 +35,7 @@ export const projects: Project[] = [
     description: "Exploración de formas y estructuras mediante el modelado tridimensional, enfocado en el detalle y la precisión técnica.",
     category: "Diseño 3D",
     year: "2025",
-    image: "/projects/modelado.png",
+    image: "/projects/modelado.jpg",
     tags: ["3D", "Modelado", "Render"],
   },
 ];

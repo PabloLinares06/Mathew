@@ -104,7 +104,7 @@ export default function Hero() {
           transition={{ duration: 1, ease: [0.33, 1, 0.68, 1] }}
           className="flex flex-col items-center"
         >
-          <div className="w-56 h-56 md:w-80 md:h-80 lg:w-[24rem] lg:h-[24rem] mb-2 filter drop-shadow-[0_0_35px_rgba(226,28,34,0.4)]">
+          <div className="w-64 h-64 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem] mb-2 filter drop-shadow-[0_0_40px_rgba(226,28,34,0.45)]">
             <img src="/logo-r.png" alt="Ritmo Audiovisual" className="w-full h-full object-contain" />
           </div>
           

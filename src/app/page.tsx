@@ -14,15 +14,16 @@ export default function Home() {
       {/* Projects Section */}
       <section id="projects" className="py-32 px-6 md:px-12 lg:px-24 bg-origen border-t border-silencio/10 overflow-hidden">
         <div className="flex flex-col items-center text-center mb-24 relative">
-          <div className="relative flex flex-col items-center">
-            <h2 className="font-oswald text-7xl md:text-9xl lg:text-[11rem] uppercase tracking-tighter text-presencia leading-none relative z-0">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+            <h2 className="font-oswald text-5xl md:text-8xl lg:text-[10rem] uppercase tracking-tighter text-presencia leading-none">
               Proyectos
             </h2>
-            <h3 className="font-oswald text-7xl md:text-9xl lg:text-[11rem] uppercase tracking-tighter text-presencia leading-[0.7] relative z-10 pointer-events-none mt-[-6rem] md:mt-[-10rem] lg:mt-[-12rem]">
-              <span className="italic font-blackrush normal-case text-flujo drop-shadow-[0_0_30px_rgba(233,80,33,0.5)]">Destacados</span>
+            <h3 className="font-oswald text-5xl md:text-8xl lg:text-[10rem] uppercase tracking-tighter text-flujo leading-none italic font-blackrush normal-case drop-shadow-[0_0_30px_rgba(233,80,33,0.5)]">
+              Destacados
             </h3>
           </div>
         </div>
+
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
