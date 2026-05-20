@@ -104,7 +104,7 @@ export default function Hero() {
           transition={{ duration: 1, ease: [0.33, 1, 0.68, 1] }}
           className="flex flex-col items-center gap-0"
         >
-          <div className="w-full max-w-[280px] md:max-w-[500px] lg:max-w-[680px] overflow-hidden max-h-[210px] md:max-h-[375px] lg:max-h-[510px] filter drop-shadow-[0_0_50px_rgba(226,28,34,0.4)]">
+          <div className="w-full max-w-[280px] md:max-w-[500px] lg:max-w-[680px] overflow-hidden max-h-[244px] md:max-h-[435px] lg:max-h-[592px] filter drop-shadow-[0_0_50px_rgba(226,28,34,0.4)]">
             <img 
               src="/logo-final.png" 
               alt="Ritmo Audiovisual" 
