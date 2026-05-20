@@ -7,6 +7,7 @@ export interface Project {
   image: string;
   tags: string[];
   videoUrl?: string;
+  localVideo?: string;
   gallery?: string[];
 }
 
@@ -33,11 +34,13 @@ export const projects: Project[] = [
   },
   {
     slug: "modelado-3d",
-    title: "Modelado 3D",
-    description: "Exploración de formas y estructuras mediante el modelado tridimensional, enfocado en el detalle y la precisión técnica.",
+    title: "Recreación 3D de “Salón Prado”",
+    description: "Proyecto de modelado y visualización arquitectónica desarrollado en Blender, enfocado en la recreación digital de la casa real de Salón Prado. A través del diseño 3D, la iluminación y la composición visual, busqué representar la esencia del espacio con una estética detallada y una visión cinematográfica.",
     category: "Diseño 3D",
     year: "2025",
     image: "/projects/modelado.jpg",
-    tags: ["3D", "Modelado", "Render"],
+    tags: ["3D", "Blender", "Render"],
+    localVideo: "/projects/modelado-render.mp4",
+    gallery: ["/projects/modelado-1.png", "/projects/modelado-2.png", "/projects/modelado-3.png", "/projects/modelado-4.png"]
   },
 ];

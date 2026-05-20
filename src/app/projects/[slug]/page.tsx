@@ -100,6 +100,19 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
                 ></iframe>
               </div>
             )}
+
+            {project.localVideo && (
+              <div className="mb-24 aspect-video w-full bg-black/20 rounded-lg overflow-hidden border border-silencio/10">
+                <video
+                  src={project.localVideo}
+                  className="w-full h-full object-cover"
+                  controls
+                  autoPlay
+                  muted
+                  loop
+                ></video>
+              </div>
+            )}
             
             <p className="font-lato text-lg text-silencio leading-relaxed">
               Explora este proyecto detalladamente. Cada pieza visual y estratégica ha sido diseñada con el objetivo de transmitir la esencia de la marca y conectar emocionalmente con su audiencia a través de narrativas inmersivas y diseño crossmedia de alta calidad.

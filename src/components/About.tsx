@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const text = "Exploro la intersección entre la lógica estructural y la creatividad visual. Mi enfoque en diseño crossmedia busca crear experiencias que no solo se vean bien, sino que funcionen con una precisión milimétrica, conectando marcas con audiencias en cada punto de contacto digital.";
+const text = "Exploro la conexión entre el diseño, el movimiento y la narrativa audiovisual. Mi enfoque creativo busca desarrollar experiencias visuales que transmitan identidad, emociones y una estética auténtica, conectando marcas con personas a través de historias y contenido con una visión cinematográfica.";
 
 export default function About() {
   const containerRef = useRef<HTMLDivElement>(null);
