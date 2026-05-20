@@ -31,6 +31,7 @@ export const projects: Project[] = [
     image: "/projects/documental.png",
     videoUrl: "https://www.youtube.com/embed/-5R4mixYBn4",
     tags: ["Audiovisual", "Dirección", "Montaje"],
+    gallery: ["/projects/doc-1.jpg", "/projects/doc-2.jpg"]
   },
   {
     slug: "modelado-3d",
