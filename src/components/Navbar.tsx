@@ -32,11 +32,11 @@ export default function Navbar() {
     >
       <div className="max-w-[1800px] mx-auto px-6 md:px-12 flex items-center h-full">
         
-        {/* Left: Logo Only - flex-1 for balance */}
-        <div className="flex-1 flex justify-start z-10">
+        {/* Left: Logo with Name */}
+        <div className="flex justify-start z-10">
           <Link href="/" className="group">
-            <div className="w-16 h-16 md:w-24 md:h-24 transition-transform duration-700 group-hover:rotate-[360deg]">
-              <img src="/logo-r.png" alt="Ritmo Audiovisual Logo" className="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(226,28,34,0.4)]" />
+            <div className="w-20 h-20 md:w-28 md:h-28 transition-transform duration-700 hover:scale-110">
+              <img src="/logo.png" alt="Ritmo Audiovisual Logo" className="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(226,28,34,0.4)]" />
             </div>
           </Link>
         </div>

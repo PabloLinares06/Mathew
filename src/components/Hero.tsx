@@ -119,8 +119,9 @@ export default function Hero() {
               </span>
             </h1>
             <p className="font-lato text-silencio text-sm md:text-base uppercase tracking-[0.8em]">
-              Diseño Crossmedia
+              Diseñador Crossmedia
             </p>
+
           </div>
         </motion.div>
       </div>
