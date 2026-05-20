@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, ReactNode } from "react";
+import { useEffect, ReactNode, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import gsap from "gsap";
@@ -14,6 +14,7 @@ interface SmoothScrollProps {
 
 export default function SmoothScroll({ children }: SmoothScrollProps) {
   const pathname = usePathname();
+  const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -24,7 +25,7 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
       smoothWheel: true,
     });
 
-    // Make lenis available globally for manual triggers if needed
+    lenisRef.current = lenis;
     (window as any).lenis = lenis;
 
     lenis.on("scroll", ScrollTrigger.update);
@@ -41,27 +42,42 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
     };
   }, []);
 
-  // Handle hash scrolling on route change
+  // Handle hash scrolling on route change with multiple checks
   useEffect(() => {
-    const lenis = (window as any).lenis;
-    if (!lenis) return;
+    if (!lenisRef.current) return;
 
-    const handleHashScroll = () => {
-      if (window.location.hash) {
-        const target = document.querySelector(window.location.hash);
+    const scrollToHash = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const target = document.querySelector(hash);
         if (target) {
-          // Small timeout to allow Next.js to finish route rendering
-          setTimeout(() => {
-            lenis.scrollTo(target as HTMLElement, { offset: 0, duration: 1.5 });
-          }, 100);
+          lenisRef.current?.scrollTo(target as HTMLElement, { 
+            offset: 0, 
+            duration: 1.8,
+            immediate: false
+          });
+          return true;
         }
-      } else {
-        // If no hash, scroll to top on route change
-        lenis.scrollTo(0, { duration: 0, immediate: true });
       }
+      return false;
     };
 
-    handleHashScroll();
+    // If no hash, immediate scroll to top
+    if (!window.location.hash) {
+      lenisRef.current.scrollTo(0, { duration: 0, immediate: true });
+    } else {
+      // Periodic check because Next.js route change can be asynchronous with DOM updates
+      let attempts = 0;
+      const intervalId = setInterval(() => {
+        const success = scrollToHash();
+        attempts++;
+        if (success || attempts > 10) {
+          clearInterval(intervalId);
+        }
+      }, 150);
+
+      return () => clearInterval(intervalId);
+    }
   }, [pathname]);
 
   return <>{children}</>;
