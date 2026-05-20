@@ -60,6 +60,7 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
       {/* Content */}
       <section className="py-24 px-6 md:px-24">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
+          {/* Sidebar */}
           <div className="md:col-span-1">
             <div className="sticky top-24 space-y-12">
               <div>
@@ -83,6 +84,8 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
             </div>
           </div>
 
+          {/* Main Content */}
+          <div className="md:col-span-2">
             <p className="font-lato text-2xl md:text-3xl text-presencia leading-relaxed mb-12">
               {project.description}
             </p>
@@ -99,7 +102,7 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
             )}
             
             <p className="font-lato text-lg text-silencio leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              Explora este proyecto detalladamente. Cada pieza visual y estratégica ha sido diseñada con el objetivo de transmitir la esencia de la marca y conectar emocionalmente con su audiencia a través de narrativas inmersivas y diseño crossmedia de alta calidad.
             </p>
             
             <div className="mt-24 space-y-12">
