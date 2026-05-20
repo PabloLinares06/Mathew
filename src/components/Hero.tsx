@@ -102,13 +102,13 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.33, 1, 0.68, 1] }}
-          className="flex flex-col items-center gap-12 md:gap-16"
+          className="flex flex-col items-center"
         >
-          <div className="w-full max-w-[300px] md:max-w-[700px] lg:max-w-[1000px] filter drop-shadow-[0_0_60px_rgba(226,28,34,0.5)]">
-            <img src="/logo-r.png" alt="Ritmo Audiovisual" className="w-full h-full object-contain" />
+          <div className="w-full max-w-[300px] md:max-w-[700px] lg:max-w-[1000px] filter drop-shadow-[0_0_60px_rgba(226,28,34,0.5)] leading-[0]">
+            <img src="/logo-r.png" alt="Ritmo Audiovisual" className="w-full h-auto object-contain" />
           </div>
           
-          <div className="space-y-6">
+          <div className="mt-[-4rem] md:mt-[-10rem] lg:mt-[-15rem] space-y-6">
             <h1 className="font-oswald text-5xl md:text-8xl lg:text-[11rem] uppercase tracking-tighter text-presencia leading-none">
               <span className="text-flujo italic font-blackrush normal-case drop-shadow-[0_0_20px_rgba(242,140,38,0.4)] block">
                 Mathew Ramirez
