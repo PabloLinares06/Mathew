@@ -79,10 +79,11 @@ export default function Experience() {
                   0{index + 1}
                 </span>
                 <h3
-                  className="font-oswald text-6xl md:text-9xl uppercase tracking-tighter mb-20 md:mb-32 leading-none"
+                  className="font-oswald text-6xl md:text-9xl uppercase tracking-tighter mb-20 md:mb-32 leading-none flex items-baseline justify-center"
                   style={{ color: skill.color }}
                 >
-                  {skill.title}
+                  {skill.title.replace(".", "")}
+                  <span className="inline-block ml-4 md:ml-6 text-detonante">.</span>
                 </h3>
                 <p className="font-lato text-silencio text-lg md:text-2xl max-w-xl mx-auto">
                   {skill.description}
