@@ -41,10 +41,10 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
           <div className="absolute inset-0 bg-origen/60" />
         </motion.div>
         
-        <div className="absolute inset-0 flex items-center justify-center p-6 text-center">
+        <div className="absolute inset-0 flex items-center justify-center p-6 text-center z-20">
           <div className="max-w-4xl">
-            <Link href="/" className="inline-flex items-center gap-2 text-detonante hover:text-presencia transition-colors mb-8 font-oswald uppercase tracking-widest text-sm">
-              <ArrowLeft size={16} /> Volver al inicio
+            <Link href="/#projects" className="inline-flex items-center gap-2 text-detonante hover:text-presencia transition-colors mb-8 font-oswald uppercase tracking-widest text-sm pointer-events-auto">
+              <ArrowLeft size={16} /> Ver Otros Proyectos
             </Link>
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}

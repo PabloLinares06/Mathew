@@ -23,6 +23,19 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
 
     lenis.on("scroll", ScrollTrigger.update);
 
+    // Handle initial hash or route change hash
+    const handleHashScroll = () => {
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          lenis.scrollTo(target as HTMLElement, { offset: 0, duration: 2 });
+        }
+      }
+    };
+
+    // Small delay to ensure DOM is ready and route transition finished
+    const timeoutId = setTimeout(handleHashScroll, 500);
+
     gsap.ticker.add((time) => {
       lenis.raf(time * 1000);
     });
