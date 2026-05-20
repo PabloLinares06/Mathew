@@ -104,12 +104,12 @@ export default function Hero() {
           transition={{ duration: 1, ease: [0.33, 1, 0.68, 1] }}
           className="flex flex-col items-center"
         >
-          <div className="w-64 h-64 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem] mb-2 filter drop-shadow-[0_0_40px_rgba(226,28,34,0.45)]">
+          <div className="w-full max-w-[280px] md:max-w-[550px] lg:max-w-[850px] mb-[-2rem] md:mb-[-5rem] lg:mb-[-8rem] filter drop-shadow-[0_0_50px_rgba(226,28,34,0.5)] z-0">
             <img src="/logo-r.png" alt="Ritmo Audiovisual" className="w-full h-full object-contain" />
           </div>
           
-          <h1 className="font-oswald text-6xl md:text-8xl lg:text-9xl uppercase tracking-tighter text-presencia leading-[0.8] mb-8">
-            <span className="text-flujo italic font-blackrush normal-case drop-shadow-[0_0_15px_rgba(242,140,38,0.3)]">
+          <h1 className="font-oswald text-6xl md:text-9xl lg:text-[12rem] uppercase tracking-tighter text-presencia leading-[0.8] mb-8 relative z-10">
+            <span className="text-flujo italic font-blackrush normal-case drop-shadow-[0_0_20px_rgba(242,140,38,0.4)]">
               Mathew Ramirez
             </span>
           </h1>
