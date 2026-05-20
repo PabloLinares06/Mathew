@@ -17,9 +17,9 @@ export const projects: Project[] = [
     description: "Una marca que transforma ideas en experiencias visuales a través del ritmo, el movimiento y la narrativa audiovisual. Cada elemento fue diseñado para transmitir energía, identidad y una conexión auténtica con la cultura visual actual. Este proyecto reúne piezas clave de la identidad de Ritmo Audiovisual, mostrando cómo el diseño, la producción audiovisual y la creatividad digital se conectan para construir una marca moderna, dinámica y con una esencia cinematográfica.",
     category: "Branding & Identidad",
     year: "2026",
-    image: "/projects/marca-1.jpg",
+    image: "/projects/marca-personal.png",
     tags: ["Logo", "Branding", "Estrategia"],
-    gallery: ["/projects/marca-2.jpg", "/projects/marca-3.jpg", "/projects/marca-4.jpg"]
+    gallery: ["/projects/marca-1.jpg", "/projects/marca-2.jpg", "/projects/marca-3.jpg", "/projects/marca-4.jpg"]
   },
   {
     slug: "documental-cinematografico",
