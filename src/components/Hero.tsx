@@ -92,30 +92,32 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative w-full h-screen overflow-hidden bg-origen flex items-center justify-center">
+    <section id="home" className="relative w-full min-h-screen overflow-hidden bg-origen flex items-center justify-center py-20 md:py-32">
       <canvas
         ref={canvasRef}
         className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40"
       />
-      <div className="relative z-10 text-center px-4">
+      <div className="relative z-10 text-center px-4 w-full max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.33, 1, 0.68, 1] }}
-          className="flex flex-col items-center"
+          className="flex flex-col items-center gap-12 md:gap-16"
         >
-          <div className="w-full max-w-[280px] md:max-w-[500px] lg:max-w-[700px] mb-[-1rem] md:mb-[-3rem] lg:mb-[-4rem] filter drop-shadow-[0_0_50px_rgba(226,28,34,0.5)]">
+          <div className="w-full max-w-[300px] md:max-w-[700px] lg:max-w-[1000px] filter drop-shadow-[0_0_60px_rgba(226,28,34,0.5)]">
             <img src="/logo-r.png" alt="Ritmo Audiovisual" className="w-full h-full object-contain" />
           </div>
           
-          <h1 className="font-oswald text-5xl md:text-8xl lg:text-[10rem] uppercase tracking-tighter text-presencia leading-none mb-8">
-            <span className="text-flujo italic font-blackrush normal-case drop-shadow-[0_0_20px_rgba(242,140,38,0.4)] block">
-              Mathew Ramirez
-            </span>
-          </h1>
-          <p className="font-lato text-silencio text-xs md:text-sm uppercase tracking-[0.6em]">
-            Diseño Crossmedia
-          </p>
+          <div className="space-y-6">
+            <h1 className="font-oswald text-5xl md:text-8xl lg:text-[11rem] uppercase tracking-tighter text-presencia leading-none">
+              <span className="text-flujo italic font-blackrush normal-case drop-shadow-[0_0_20px_rgba(242,140,38,0.4)] block">
+                Mathew Ramirez
+              </span>
+            </h1>
+            <p className="font-lato text-silencio text-sm md:text-base uppercase tracking-[0.8em]">
+              Diseño Crossmedia
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>
