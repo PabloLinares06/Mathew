@@ -13,18 +13,15 @@ export default function Home() {
       
       {/* Projects Section */}
       <section id="projects" className="py-32 px-6 md:px-12 lg:px-24 bg-origen border-t border-silencio/10 overflow-hidden">
-        <div className="flex flex-col items-center text-center mb-48 relative">
+        <div className="flex flex-col items-center text-center mb-24 relative">
           <div className="relative flex flex-col items-center">
-            <h2 className="font-oswald text-7xl md:text-9xl lg:text-[11rem] uppercase tracking-tighter text-detonante leading-none opacity-20 relative z-0">
+            <h2 className="font-oswald text-7xl md:text-9xl lg:text-[11rem] uppercase tracking-tighter text-presencia leading-none opacity-20 relative z-0">
               Proyectos
             </h2>
-            <h3 className="font-oswald text-7xl md:text-9xl lg:text-[11rem] uppercase tracking-tighter text-presencia leading-[0.7] relative z-10 pointer-events-none mt-[-4rem] md:mt-[-6rem] lg:mt-[-8rem]">
+            <h3 className="font-oswald text-7xl md:text-9xl lg:text-[11rem] uppercase tracking-tighter text-presencia leading-[0.7] relative z-10 pointer-events-none mt-[-5rem] md:mt-[-8rem] lg:mt-[-10rem]">
               <span className="italic font-blackrush normal-case text-flujo drop-shadow-[0_0_30px_rgba(233,80,33,0.5)]">Destacados</span>
             </h3>
           </div>
-          <p className="font-lato text-silencio max-w-2xl text-sm md:text-lg lg:text-xl uppercase tracking-[0.3em] mt-12 md:mt-20 z-20 relative px-4">
-            Explorando el diseño desde una perspectiva <br className="hidden md:block" /> lógica y disruptiva.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
