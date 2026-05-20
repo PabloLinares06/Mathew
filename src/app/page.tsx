@@ -18,7 +18,7 @@ export default function Home() {
             <h2 className="font-oswald text-5xl md:text-8xl lg:text-[10rem] uppercase tracking-tighter text-presencia leading-none">
               Proyectos
             </h2>
-            <h3 className="font-oswald text-5xl md:text-8xl lg:text-[10rem] uppercase tracking-tighter text-flujo leading-none italic font-blackrush normal-case drop-shadow-[0_0_30px_rgba(233,80,33,0.5)]">
+            <h3 className="text-5xl md:text-8xl lg:text-[10rem] text-flujo leading-none font-blackrush normal-case drop-shadow-[0_0_30px_rgba(233,80,33,0.5)]">
               Destacados
             </h3>
           </div>
