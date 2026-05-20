@@ -105,20 +105,20 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
               Explora este proyecto detalladamente. Cada pieza visual y estratégica ha sido diseñada con el objetivo de transmitir la esencia de la marca y conectar emocionalmente con su audiencia a través de narrativas inmersivas y diseño crossmedia de alta calidad.
             </p>
             
-            <div className="mt-24 space-y-12">
+            <div className="mt-24 space-y-16 md:space-y-24">
               {project.gallery ? (
                 project.gallery.map((img, idx) => (
-                  <div key={idx} className="aspect-video bg-silencio/10 overflow-hidden rounded-sm">
-                    <img src={img} alt={`Process ${idx + 1}`} className="w-full h-full object-cover" />
+                  <div key={idx} className="w-full bg-silencio/5 rounded-sm overflow-hidden border border-silencio/10">
+                    <img src={img} alt={`Process ${idx + 1}`} className="w-full h-auto display-block" />
                   </div>
                 ))
               ) : (
                 <>
-                  <div className="aspect-video bg-silencio/10 overflow-hidden rounded-sm">
-                    <img src={project.image} alt="Process 1" className="w-full h-full object-cover" />
+                  <div className="w-full bg-silencio/5 rounded-sm overflow-hidden border border-silencio/10">
+                    <img src={project.image} alt="Process 1" className="w-full h-auto display-block" />
                   </div>
-                  <div className="aspect-video bg-silencio/10 overflow-hidden rounded-sm">
-                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1600" alt="Process 2" className="w-full h-full object-cover" />
+                  <div className="w-full bg-silencio/5 rounded-sm overflow-hidden border border-silencio/10">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1600" alt="Process 2" className="w-full h-auto display-block" />
                   </div>
                 </>
               )}

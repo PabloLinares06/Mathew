@@ -19,7 +19,7 @@ export const projects: Project[] = [
     year: "2026",
     image: "/projects/marca-personal.png",
     tags: ["Logo", "Branding", "Estrategia"],
-    gallery: ["/projects/marca-1.jpg", "/projects/marca-2.jpg", "/projects/marca-3.jpg", "/projects/marca-4.jpg"]
+    gallery: ["/projects/marca-1.jpg", "/projects/marca-3.jpg", "/projects/marca-4.jpg", "/projects/marca-2.jpg"]
   },
   {
     slug: "documental-cinematografico",
