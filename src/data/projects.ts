@@ -16,7 +16,7 @@ export const projects: Project[] = [
     description: "Desarrollo de la identidad visual 'Ritmo Audiovisual'. Un proceso creativo que integra la lógica del diseño con la fluidez del movimiento audiovisual.",
     category: "Branding & Identidad",
     year: "2026",
-    image: "/projects/marca-personal.png", // User to provide this later
+    image: "/projects/marca-personal.png",
     tags: ["Logo", "Branding", "Estrategia"],
   },
   {
