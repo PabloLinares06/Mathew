@@ -7,11 +7,21 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const skills = [
-  { title: "Estrategia Digital", color: "var(--color-detonante)" },
-  { title: "UX / UI Design", color: "var(--color-flujo)" },
-  { title: "Motion Graphics", color: "var(--color-claridad)" },
-  { title: "Desarrollo Web", color: "var(--color-silencio)" },
-  { title: "Branding Inmersivo", color: "var(--color-presencia)" },
+  { 
+    title: "Producción Audiovisual.", 
+    description: "Transformo ideas en piezas visuales con una estética cinematográfica y una narrativa que conecta con las personas.",
+    color: "var(--color-detonante)" 
+  },
+  { 
+    title: "Diseño Gráfico y Branding.", 
+    description: "Diseño identidades visuales y piezas gráficas que reflejan la esencia de cada marca de forma auténtica y creativa.",
+    color: "var(--color-flujo)" 
+  },
+  { 
+    title: "Creación de Contenido Digital.", 
+    description: "Creo contenido dinámico para redes sociales, combinando creatividad y estrategia para generar impacto y conectar con la audiencia.",
+    color: "var(--color-claridad)" 
+  },
 ];
 
 export default function Experience() {
@@ -75,7 +85,7 @@ export default function Experience() {
                   {skill.title}
                 </h3>
                 <p className="font-lato text-silencio text-lg md:text-2xl max-w-xl mx-auto">
-                  Transformando conceptos lógicos en narrativas visuales de alto impacto mediante el uso de herramientas de diseño crossmedia.
+                  {skill.description}
                 </p>
               </div>
             </div>
