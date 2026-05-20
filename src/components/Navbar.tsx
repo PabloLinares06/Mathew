@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Instagram, Layout } from "lucide-react";
 
 const navLinks = [
   { name: "Inicio", href: "/#home" },
@@ -112,11 +112,13 @@ export default function Navbar() {
             </div>
 
             <div className="flex gap-8 mt-12">
-               <a href="https://www.instagram.com/ritmo.audiovisual?igsh=MXY4MDh3djhkd2dtNQ%3D%3D&utm_source=qr" target="_blank" className="font-lato text-xs uppercase tracking-widest text-silencio hover:text-detonante transition-colors">
-                  Instagram
+               <a href="https://www.instagram.com/ritmo.audiovisual?igsh=MXY4MDh3djhkd2dtNQ%3D%3D&utm_source=qr" target="_blank" className="text-silencio hover:text-detonante transition-colors flex items-center gap-2">
+                  <Instagram size={24} />
+                  <span className="font-lato text-xs uppercase tracking-widest">Instagram</span>
                </a>
-               <a href="https://www.behance.net/josephramirez37" target="_blank" className="font-lato text-xs uppercase tracking-widest text-silencio hover:text-detonante transition-colors">
-                  Behance
+               <a href="https://www.behance.net/josephramirez37" target="_blank" className="text-silencio hover:text-detonante transition-colors flex items-center gap-2">
+                  <Layout size={24} />
+                  <span className="font-lato text-xs uppercase tracking-widest">Behance</span>
                </a>
             </div>
           </motion.div>

@@ -3,6 +3,7 @@ import About from "@/components/About";
 import Experience from "@/components/Experience";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/data/projects";
+import { Instagram, Layout } from "lucide-react";
 
 export default function Home() {
   return (
@@ -46,16 +47,17 @@ export default function Home() {
           {/* Center: Social Links - MATHEMATICALLY CENTERED */}
           <div className="flex justify-center gap-12 order-1 md:order-2">
             {[
-              { label: "Instagram", url: "https://www.instagram.com/ritmo.audiovisual?igsh=MXY4MDh3djhkd2dtNQ%3D%3D&utm_source=qr" },
-              { label: "Behance", url: "https://www.behance.net/josephramirez37" }
+              { label: "Instagram", url: "https://www.instagram.com/ritmo.audiovisual?igsh=MXY4MDh3djhkd2dtNQ%3D%3D&utm_source=qr", icon: <Instagram size={18} /> },
+              { label: "Behance", url: "https://www.behance.net/josephramirez37", icon: <Layout size={18} /> }
             ].map((social) => (
               <a 
                 key={social.label}
                 href={social.url} 
                 target="_blank"
-                className="font-lato text-xs uppercase tracking-[0.4em] text-silencio hover:text-detonante transition-all duration-300 relative group"
+                className="font-lato text-xs uppercase tracking-[0.4em] text-silencio hover:text-detonante transition-all duration-300 relative group flex items-center gap-2"
               >
-                {social.label}
+                {social.icon}
+                <span className="hidden sm:inline">{social.label}</span>
                 <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-detonante transition-all duration-300 group-hover:w-full" />
               </a>
             ))}

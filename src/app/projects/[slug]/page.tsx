@@ -106,12 +106,22 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
             </p>
             
             <div className="mt-24 space-y-12">
-              <div className="aspect-video bg-silencio/10 overflow-hidden">
-                <img src={project.image} alt="Process 1" className="w-full h-full object-cover" />
-              </div>
-              <div className="aspect-video bg-silencio/10 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1600" alt="Process 2" className="w-full h-full object-cover" />
-              </div>
+              {project.gallery ? (
+                project.gallery.map((img, idx) => (
+                  <div key={idx} className="aspect-video bg-silencio/10 overflow-hidden rounded-sm">
+                    <img src={img} alt={`Process ${idx + 1}`} className="w-full h-full object-cover" />
+                  </div>
+                ))
+              ) : (
+                <>
+                  <div className="aspect-video bg-silencio/10 overflow-hidden rounded-sm">
+                    <img src={project.image} alt="Process 1" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="aspect-video bg-silencio/10 overflow-hidden rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1600" alt="Process 2" className="w-full h-full object-cover" />
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
